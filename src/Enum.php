@@ -60,7 +60,7 @@ abstract class Enum
 
     final public function __get($name)
     {
-        switch ($name){
+        switch ($name) {
             case 'value':
                 return $this->value;
             case 'name':
@@ -77,12 +77,25 @@ abstract class Enum
 
     final public function __isset($name): bool
     {
-        switch ($name){
+        switch ($name) {
             case 'value':
             case 'name':
                 return true;
             default:
                 return false;
         }
+    }
+
+    /** @return static */
+    final public static function __callStatic($name, $arguments): self
+    {
+        try {
+            if ($value = @constant(static::class . '::' . $name)) {
+                return self::from($value);
+            }
+        } catch (\ErrorException $e) {
+        }
+
+        throw new InvalidValueException(sprintf('Invalid case: %s', $value));
     }
 }

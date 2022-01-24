@@ -49,6 +49,10 @@ Suit::from(Suit::Hearts)->value //H
 Suit::from(Suit::Hearts)->name //Hearts
 Suit::from(Suit::Hearts)->color() //red
 
+Suit::Spades()->value //S
+Suit::Spades()->name //Spades
+Suit::Spades()->color() //black
+
 Suit::tryFrom('foo') //null
 Suit::from('foo') //throw \Hyqo\Enum\InvalidValueException
 

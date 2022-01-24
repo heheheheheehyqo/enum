@@ -10,6 +10,8 @@ class EnumTest extends TestCase
 {
     public function test_create(): void
     {
+        $this->assertEquals('H', Suit::Hearts()->value);
+
         $this->assertEquals('H', Suit::from(Suit::Hearts)->value);
         $this->assertEquals('Hearts', Suit::from(Suit::Hearts)->name);
 
@@ -17,6 +19,9 @@ class EnumTest extends TestCase
 
         $this->expectException(InvalidValueException::class);
         Suit::from('foo');
+
+        $this->expectException(InvalidValueException::class);
+        Suit::foo();
     }
 
     public function test_write_value(): void
