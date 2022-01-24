@@ -45,17 +45,17 @@ class Suit extends Enum
     }
 }
 
-Suit::from(Suit::Hearts)->value //H
-Suit::from(Suit::Hearts)->name //Hearts
-Suit::from(Suit::Hearts)->color() //red
+Suit::from(Suit::Hearts)->value; //H
+Suit::from(Suit::Hearts)->name; //Hearts
+Suit::from(Suit::Hearts)->color(); //red
 
-Suit::Spades()->value //S
-Suit::Spades()->name //Spades
-Suit::Spades()->color() //black
+Suit::Spades()->value; //S
+Suit::Spades()->name; //Spades
+Suit::Spades()->color(); //black
 
-Suit::tryFrom('foo') //null
-Suit::from('foo') //throw \Hyqo\Enum\InvalidValueException
+Suit::tryFrom('foo'); //null
+Suit::from('foo'); //throw \Hyqo\Enum\InvalidValueException
 
-Suit::from(Suit::Hearts)->foo //throw \RuntimeException
-Suit::from(Suit::Hearts)->value = 'foo' //throw \RuntimeException
+Suit::from(Suit::Hearts)->foo; //throw \RuntimeException
+Suit::from(Suit::Hearts)->value = 'foo'; //throw \RuntimeException
 ```
