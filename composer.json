@@ -1,7 +1,10 @@
 {
     "name": "hyqo/enum",
-    "description": "",
+    "description": "Simple Backed Enums implementation for PHP <8.1",
     "keywords": [
+        "php",
+        "enum",
+        "backed enum"
     ],
     "license": "MIT",
     "authors": [
